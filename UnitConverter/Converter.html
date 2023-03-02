@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Unit Converter</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800|Poppins:700" rel="stylesheet">
+    <link href="converterstyle.css" rel="stylesheet" />
+    <script src="converterscript.js"></script>
+  </head>
+  <body>
+    <div class="converter-wrapper">
+      <h1>UNIT CONVERTER</h1>
+
+      <form name="property_form">
+        <span>
+          <select class="select-property" name="the_menu" size=1 onChange="UpdateUnitMenu(this, document.form_A.unit_menu); UpdateUnitMenu(this, document.form_B.unit_menu)">
+          </select>
+        </span>
+      </form>
+
+      <br/>
+      <br/>
+
+      <div class="side-1">
+        <form name="form_A" onSubmit="return false">
+          <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0" onKeyUp="CalculateUnit(document.form_A, document.form_B)">
+          <span>
+            <select name="unit_menu" onChange="CalculateUnit(document.form_B, document.form_A)">
+            </select>
+          </span>
+        </form>
+      </div> <!-- /converter-side-1 -->
+
+     <div class="converter-equals">
+       <p>=</p>
+     </div> <!-- /converter-side-1 -->
+
+
+      <div class="side-2">
+        <form name="form_B" onSubmit="return false">
+          <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0" onkeyup="CalculateUnit(document.form_B, document.form_A)">
+          <span>
+            <select name="unit_menu" onChange="CalculateUnit(document.form_A, document.form_B)">
+            </select>
+          </span>
+        </form>
+      </div> <!-- /converter-side-2 -->
+    </div><!-- /converter-wrapper -->
+
+  </body>
+</html>
